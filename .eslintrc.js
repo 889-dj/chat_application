@@ -4,8 +4,8 @@ module.exports = {
     es6: true,
   },
   extends: [
-    'plugin:react/recommended',
     'airbnb',
+    'plugin:react/recommended',
   ],
   globals: {
     Atomics: 'readonly',
@@ -17,8 +17,12 @@ module.exports = {
     },
     ecmaVersion: 2018,
     sourceType: 'module',
+    requireConfigFile: false,
+    babelOptions: {
+      presets: ["@babel/preset-react"],
+    },
   },
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   plugins: [
     'react',
   ],
