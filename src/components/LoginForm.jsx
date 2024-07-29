@@ -31,9 +31,23 @@ const Modal = () => {
       <div className="form">
         <h1 className="title">Chat Application</h1>
         <form onSubmit={handleSubmit}>
-          <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} className="input" placeholder="Username" required />
-          <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} className="input" placeholder="Password" required />
-          <div align="center">
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="input"
+            placeholder="Username"
+            required
+          />
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="input"
+            placeholder="Password"
+            required
+          />
+          <div style={{ textAlign: 'center' }}>
             <button type="submit" className="button">
               <span>Start chatting</span>
             </button>
@@ -42,7 +56,6 @@ const Modal = () => {
         <h1>{error}</h1>
       </div>
     </div>
-
   );
 };
 

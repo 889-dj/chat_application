@@ -4,7 +4,7 @@ import ChatFeed from './components/ChatFeed';
 import LoginForm from './components/LoginForm';
 import './App.css';
 
-// const projectID = '1b83400b-d209-4dc6-81a2-ff0a68e05094';
+const projectID = '1b83400b-d209-4dc6-81a2-ff0a68e05094';
 
 const App = () => {
   if (!localStorage.getItem('username')) return <LoginForm />;
@@ -12,7 +12,7 @@ const App = () => {
   return (
     <ChatEngine
       height="100vh"
-      projectID={process.env.PROJECT_ID}
+      projectID={projectID}
       userName={localStorage.getItem('username')}
       userSecret={localStorage.getItem('password')}
       renderChatFeed={(chatAppProps) => <ChatFeed {...chatAppProps} />}
