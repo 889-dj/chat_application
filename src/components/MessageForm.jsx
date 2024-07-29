@@ -8,19 +8,15 @@ const MessageForm = (props) => {
 
   const handleChange = (event) => {
     setValue(event.target.value);
-
     isTyping(props, chatId);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-
     const text = value.trim();
-
     if (text.length > 0) {
       sendMessage(creds, chatId, { text });
     }
-
     setValue('');
   };
 
@@ -35,9 +31,9 @@ const MessageForm = (props) => {
         placeholder="Send a message..."
         value={value}
         onChange={handleChange}
-        onSubmit={handleSubmit}
+        aria-label="Message input" // Add aria-label to the input for better accessibility
       />
-      <label htmlFor="upload-button">
+      <label htmlFor="upload-button" aria-label="Upload file">
         <span className="image-button">
           <PictureOutlined className="picture-icon" />
         </span>
@@ -48,8 +44,13 @@ const MessageForm = (props) => {
         id="upload-button"
         style={{ display: 'none' }}
         onChange={handleUpload}
+        aria-label="Upload file" // Add aria-label to file input for better accessibility
       />
-      <button type="submit" className="send-button">
+      <button
+        type="submit"
+        className="send-button"
+        aria-label="Send message" // Add aria-label to button
+      >
         <SendOutlined className="send-icon" />
       </button>
     </form>
